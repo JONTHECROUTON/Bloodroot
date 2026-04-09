@@ -1,0 +1,3 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Images/unnamed.png?fileID=2800000&amp;guid=e0e7d5b0c63a47b40930b4cf8123b82e&amp;type=3#unnamed&quot;); -unity-background-scale-mode: scale-and-crop;" />
+</ui:UXML>
