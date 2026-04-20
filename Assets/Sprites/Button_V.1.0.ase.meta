@@ -127,7 +127,7 @@ ScriptedImporter:
     originalName: 
     pivot: {x: 0.5, y: -1.7142859}
     alignment: 9
-    border: {x: 1, y: 1, z: 1, w: 1}
+    border: {x: 0, y: 0, z: 0, w: 0}
     customData: 
     rect:
       serializedVersion: 2
@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 4
       width: 20
       height: 7
-    spriteID: db0c5b48c50ea7943b1e984943c3a6e4
+    spriteID: 1c7ed864b562346499f9a46523be2919
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -166,7 +166,7 @@ ScriptedImporter:
         y: 12
         width: 20
         height: 7
-      spriteId: db0c5b48c50ea7943b1e984943c3a6e4
+      spriteId: 1c7ed864b562346499f9a46523be2919
     linkedCells: []
     parentIndex: -1
   platformSettings:
