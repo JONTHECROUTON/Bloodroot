@@ -135,7 +135,7 @@ ScriptedImporter:
       y: 4
       width: 50
       height: 29
-    spriteID: 68ae9dc139369bb47acb08c0ee3de4e0
+    spriteID: df933979d26d3274da75da027fd5ba15
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -166,7 +166,7 @@ ScriptedImporter:
         y: 16
         width: 50
         height: 29
-      spriteId: 68ae9dc139369bb47acb08c0ee3de4e0
+      spriteId: df933979d26d3274da75da027fd5ba15
     linkedCells: []
     parentIndex: -1
   platformSettings:
