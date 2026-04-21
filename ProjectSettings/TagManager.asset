@@ -7,6 +7,7 @@ TagManager:
   - Floor
   - Objects
   - Background
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -47,14 +48,17 @@ TagManager:
   - name: Background
     uniqueID: 694237803
     locked: 0
-  - name: Floor
+  - name: BGObjects
     uniqueID: 2531329129
     locked: 0
-  - name: Objects
+  - name: Tilemap
     uniqueID: 501909835
     locked: 0
-  - name: Player
+  - name: Objects
     uniqueID: 942125157
+    locked: 0
+  - name: Player
+    uniqueID: 1197430391
     locked: 0
   m_RenderingLayers:
   - Default

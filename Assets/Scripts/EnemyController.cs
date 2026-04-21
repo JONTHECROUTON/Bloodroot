@@ -183,11 +183,6 @@ public class EnemyController : MonoBehaviour
 
             if (animator != null)
                 animator.SetTrigger("Attack");
-
-            // Try to deal damage via a PlayerHealth component on the player
-            PlayerHealth ph = player.GetComponent<PlayerHealth>();
-            if (ph != null)
-                ph.TakeDamage(attackDamage);
         }
     }
 
@@ -216,10 +211,15 @@ public class EnemyController : MonoBehaviour
         if (animator != null)
             animator.SetTrigger("Die");
 
-        // Disable collider so the corpse doesn't block the player
+        // Ignore collisions with the player so the corpse doesn't block them,
+        // but keep the collider active so the body stays on the ground.
         Collider2D col = GetComponent<Collider2D>();
-        if (col != null)
-            col.enabled = false;
+        if (col != null && player != null)
+        {
+            Collider2D playerCol = player.GetComponent<Collider2D>();
+            if (playerCol != null)
+                Physics2D.IgnoreCollision(col, playerCol);
+        }
 
         // Destroy after a short delay to allow death animation to play
         Destroy(gameObject, 1.5f);

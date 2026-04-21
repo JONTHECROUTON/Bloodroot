@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("Attack")]
     public float attackCooldown = 0.5f;
+    public float attackActiveDuration = 0.2f;
+    public PlayerAttack playerAttack;
 
     private Rigidbody2D rb;
     private Animator animator;
@@ -20,62 +22,64 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool facingRight = true;
     private float attackTimer = 0f;
-
+    private float attackActiveTimer = 0f;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+
+        if (playerAttack != null)
+            playerAttack.SetFacing(facingRight);
     }
 
     void Update()
     {
-        // Get horizontal input (A/D or Left/Right arrow keys)
         float moveInput = Input.GetAxisRaw("Horizontal");
 
-        // Move the player
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
 
-        // Check if grounded
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // Jump
         if (Input.GetButtonDown("Jump") && isGrounded)
-        {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        }
 
-        // Attack cooldown timer
         attackTimer -= Time.deltaTime;
+        attackActiveTimer -= Time.deltaTime;
 
-        // Attack
+        if (attackActiveTimer <= 0f && playerAttack != null)
+            playerAttack.DisableHitbox();
+
         if (Input.GetMouseButtonDown(0) && attackTimer <= 0f)
         {
             animator.SetTrigger("Attack");
             attackTimer = attackCooldown;
+
+            if (playerAttack != null)
+            {
+                playerAttack.EnableHitbox();
+                attackActiveTimer = attackActiveDuration;
+            }
         }
 
-        // Update animator
         animator.SetBool("isWalking", moveInput != 0);
+        animator.SetBool("isJumping", !isGrounded);
 
-        // Flip character based on direction
         if (moveInput > 0 && !facingRight)
-        {
             Flip();
-        }
         else if (moveInput < 0 && facingRight)
-        {
             Flip();
-        }
     }
 
     void Flip()
     {
         facingRight = !facingRight;
         sr.flipX = !sr.flipX;
+
+        if (playerAttack != null)
+            playerAttack.SetFacing(facingRight);
     }
 
-    // Draw the ground check circle in the editor so you can see it
     void OnDrawGizmosSelected()
     {
         if (groundCheck != null)
