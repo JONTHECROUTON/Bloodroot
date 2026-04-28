@@ -21,9 +21,17 @@ public class ScorpionAI : MonoBehaviour
     public float attackWindUp = 1.5f;
     public float contactKnockback = 5f;
 
+    [Header("Attack Hitbox")]
+    public EnemyAttack attackHitbox;
+    public float hitboxActiveDuration = 0.3f;
+
+    [Header("Audio")]
+    public AudioClip swingSound;
+
     private Animator animator;
     private SpriteRenderer sr;
     private Rigidbody2D rb;
+    private AudioSource audioSource;
     private Transform player;
 
     private int currentHealth;
@@ -41,6 +49,7 @@ public class ScorpionAI : MonoBehaviour
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
 
         currentHealth = maxHealth;
         startPosition = transform.position;
@@ -130,6 +139,12 @@ public class ScorpionAI : MonoBehaviour
         attackLockTimer = attackCooldown;
         windUpTimer = 0f;
         SetAnimState(walking: false, waiting: false, attacking: true);
+
+        if (swingSound != null && audioSource != null)
+            audioSource.PlayOneShot(swingSound);
+
+        if (attackHitbox != null)
+            StartCoroutine(HitboxPulse());
     }
 
     public void TakeDamage(int amount = 1)
@@ -139,6 +154,13 @@ public class ScorpionAI : MonoBehaviour
         currentHealth -= amount;
         if (currentHealth <= 0)
             Die();
+    }
+
+    System.Collections.IEnumerator HitboxPulse()
+    {
+        attackHitbox.EnableHitbox();
+        yield return new WaitForSeconds(hitboxActiveDuration);
+        attackHitbox.DisableHitbox();
     }
 
     System.Collections.IEnumerator StopAnimatorAfterDeath()

@@ -16,18 +16,27 @@ public class PlayerController : MonoBehaviour
     public float attackActiveDuration = 0.2f;
     public PlayerAttack playerAttack;
 
+    [Header("Audio")]
+    public AudioClip walkSound;
+    public AudioClip swingSound;
+
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer sr;
+    private AudioSource audioSource;
     private bool isGrounded;
     private bool facingRight = true;
     private float attackTimer = 0f;
     private float attackActiveTimer = 0f;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource != null && walkSound != null)
+            audioSource.clip = walkSound;
 
         if (playerAttack != null)
             playerAttack.SetFacing(facingRight);
@@ -42,7 +51,11 @@ public class PlayerController : MonoBehaviour
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
         if (Input.GetButtonDown("Jump") && isGrounded)
+        {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            if (walkSound != null && audioSource != null)
+                audioSource.PlayOneShot(walkSound);
+        }
 
         attackTimer -= Time.deltaTime;
         attackActiveTimer -= Time.deltaTime;
@@ -55,6 +68,9 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Attack");
             attackTimer = attackCooldown;
 
+            if (swingSound != null && audioSource != null)
+                audioSource.PlayOneShot(swingSound);
+
             if (playerAttack != null)
             {
                 playerAttack.EnableHitbox();
@@ -62,8 +78,15 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        animator.SetBool("isWalking", moveInput != 0);
+        bool isWalking = moveInput != 0 && isGrounded;
+        animator.SetBool("isWalking", isWalking);
         animator.SetBool("isJumping", !isGrounded);
+
+        if (audioSource != null && walkSound != null)
+        {
+            if (isWalking && !audioSource.isPlaying)
+                audioSource.PlayOneShot(walkSound);
+        }
 
         if (moveInput > 0 && !facingRight)
             Flip();

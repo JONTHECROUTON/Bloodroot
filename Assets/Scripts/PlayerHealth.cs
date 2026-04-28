@@ -8,6 +8,10 @@ public class PlayerHealth : MonoBehaviour
     [Header("Invincibility Frames")]
     public float invincibilityDuration = 0.75f;
 
+    [Header("Audio")]
+    public AudioClip hitSound;
+    public AudioSource hitAudioSource;
+
     private int currentHealth;
     private float invincibilityTimer = 0f;
     private Animator animator;
@@ -30,6 +34,9 @@ public class PlayerHealth : MonoBehaviour
 
         currentHealth -= amount;
         invincibilityTimer = invincibilityDuration;
+
+        if (hitSound != null && hitAudioSource != null)
+            hitAudioSource.PlayOneShot(hitSound);
 
         if (animator != null)
             animator.SetTrigger("Hurt");
