@@ -174,21 +174,27 @@ public class ScorpionAI : MonoBehaviour
     System.Collections.IEnumerator StopAnimatorAfterDeath()
     {
         yield return null;
+        while (animator.IsInTransition(0))
+            yield return null;
+
         float clipLength = animator.GetCurrentAnimatorStateInfo(0).length;
         yield return new WaitForSeconds(clipLength);
         if (animator != null)
-            animator.enabled = false;
+            animator.speed = 0f;
     }
 
     void Die()
     {
         isDead = true;
         rb.linearVelocity = Vector2.zero;
+        rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
 
         if (animator != null)
         {
+            animator.SetBool("isWalking", false);
+            animator.SetBool("isWaiting", false);
+            animator.SetBool("isAttacking", false);
             animator.SetTrigger("Death");
-            StartCoroutine(StopAnimatorAfterDeath());
         }
 
         // Ignore collision with player so corpse doesn't block them,
