@@ -7,11 +7,20 @@ public class EnemyAttack : MonoBehaviour
     public float knockbackForce = 5f;
 
     private Collider2D hitbox;
+    private float colliderOffsetX;
 
     void Start()
     {
         hitbox = GetComponent<Collider2D>();
         hitbox.enabled = false;
+        colliderOffsetX = Mathf.Abs(hitbox.offset.x);
+    }
+
+    public void SetFacing(bool facingRight)
+    {
+        Vector2 offset = hitbox.offset;
+        offset.x = facingRight ? colliderOffsetX : -colliderOffsetX;
+        hitbox.offset = offset;
     }
 
     // Called by animation event at the start of the attack active frame

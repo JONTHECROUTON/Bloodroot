@@ -37,6 +37,7 @@ public class ScorpionAI : MonoBehaviour
     private int currentHealth;
     private Vector2 startPosition;
     private bool movingRight = true;
+    private float hitboxOffsetX;
     private float waitTimer = 0f;
     private float attackTimer = 0f;
     private float attackLockTimer = 0f;
@@ -53,6 +54,9 @@ public class ScorpionAI : MonoBehaviour
 
         currentHealth = maxHealth;
         startPosition = transform.position;
+
+        if (attackHitbox != null)
+            hitboxOffsetX = Mathf.Abs(attackHitbox.transform.localPosition.x);
 
         GameObject playerObj = GameObject.FindWithTag("Player");
         if (playerObj != null)
@@ -106,6 +110,7 @@ public class ScorpionAI : MonoBehaviour
         float dir = movingRight ? 1f : -1f;
         rb.linearVelocity = new Vector2(dir * patrolSpeed, rb.linearVelocity.y);
         sr.flipX = movingRight;
+        FlipHitbox(movingRight);
 
         float offset = transform.position.x - startPosition.x;
         if ((movingRight && offset >= patrolDistance) || (!movingRight && offset <= -patrolDistance))
@@ -122,12 +127,15 @@ public class ScorpionAI : MonoBehaviour
         float dir = player.position.x > transform.position.x ? 1f : -1f;
         rb.linearVelocity = new Vector2(dir * chaseSpeed, rb.linearVelocity.y);
         sr.flipX = dir > 0;
+        FlipHitbox(dir > 0);
     }
 
     void DoAttack()
     {
         rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
-        sr.flipX = player.position.x > transform.position.x;
+        bool facingRight = player.position.x > transform.position.x;
+        sr.flipX = facingRight;
+        FlipHitbox(facingRight);
 
         if (attackTimer > 0f || windUpTimer < attackWindUp)
         {
@@ -215,6 +223,12 @@ public class ScorpionAI : MonoBehaviour
                 playerRb.AddForce(knockDir * contactKnockback, ForceMode2D.Impulse);
             }
         }
+    }
+
+    void FlipHitbox(bool facingRight)
+    {
+        if (attackHitbox == null) return;
+        attackHitbox.SetFacing(facingRight);
     }
 
     void SetAnimState(bool walking, bool waiting, bool attacking)

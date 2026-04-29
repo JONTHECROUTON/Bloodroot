@@ -81,6 +81,7 @@ public class PlayerController : MonoBehaviour
         bool isWalking = moveInput != 0 && isGrounded;
         animator.SetBool("isWalking", isWalking);
         animator.SetBool("isJumping", !isGrounded);
+        animator.SetBool("isSideJumping", !isGrounded && moveInput != 0);
 
         if (audioSource != null && walkSound != null)
         {
