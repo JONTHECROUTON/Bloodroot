@@ -1,7 +1,7 @@
-﻿<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:VisualElement name="Container" style="flex-grow: 1; position: absolute; -unity-text-align: upper-left; align-items: center; justify-content: center; align-self: center; align-content: center; bottom: 40%;">
-        <ui:Button text="Resume" name="Resume" style="font-size: 28px; color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sprites/Button_V.1.0.ase?fileID=-7949358343960491254&amp;guid=b4b11b8a16173d746be4aaceae13d2f3&amp;type=3#Button_V.1.0&quot;); width: 250px; height: auto;" />
-        <ui:Button text="Quit" name="Quit" style="font-size: 28px; color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sprites/Button_V.1.0.ase?fileID=-7949358343960491254&amp;guid=b4b11b8a16173d746be4aaceae13d2f3&amp;type=3#Button_V.1.0&quot;); width: 250px;" />
-        <ui:Button text="Restart" name="Restart" style="font-size: 28px; color: rgb(255, 255, 255); background-image: url(&quot;project://database/Assets/Sprites/Button_V.1.0.ase?fileID=-7949358343960491254&amp;guid=b4b11b8a16173d746be4aaceae13d2f3&amp;type=3#Button_V.1.0&quot;); width: 250px;" />
+        <ui:Button text="Resume" name="Resume" style="font-size: 28px; color: rgb(255, 255, 255); width: 250px; height: auto;" />
+        <ui:Button text="Quit" name="Quit" style="font-size: 28px; color: rgb(255, 255, 255); width: 250px;" />
+        <ui:Button text="Restart" name="Restart" style="font-size: 28px; color: rgb(255, 255, 255); width: 250px;" />
     </ui:VisualElement>
 </ui:UXML>
