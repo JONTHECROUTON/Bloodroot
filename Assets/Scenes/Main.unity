@@ -131,7 +131,6 @@ GameObject:
   - component: {fileID: 408461495}
   - component: {fileID: 408461498}
   - component: {fileID: 408461497}
-  - component: {fileID: 408461499}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -284,36 +283,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickSound: {fileID: 8300000, guid: d295461651f561a4099b8a7d49c964aa, type: 3}
   hoverSound: {fileID: 8300000, guid: 83aea1297aceb0a40a714d377e160d14, type: 3}
---- !u!114 &408461499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 408461494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 3590b91b4603b465dbb4216d601bff33, type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Game
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  sliderValueFloat: 0
+  resetValue: 100
 --- !u!1001 &688572528
 PrefabInstance:
   m_ObjectHideFlags: 0
