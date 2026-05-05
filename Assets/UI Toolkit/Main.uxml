@@ -1,4 +1,4 @@
-<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+﻿<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/UI%20Toolkit/Menu.uss?fileID=7433441132597879392&amp;guid=2304fd88f75c8814787267e988feb3ee&amp;type=3#Menu" />
     <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/MainMenu_V.2.5.ase?fileID=-3463783063830897716&amp;guid=33be79f32dc0b894d949495dca68e915&amp;type=3#MainMenu_V.2.5&quot;); position: relative; display: flex;" />
     <ui:VisualElement name="MainMenu" style="flex-grow: 1; position: absolute; bottom: 0%; width: 100%; height: 100%; display: flex;">
