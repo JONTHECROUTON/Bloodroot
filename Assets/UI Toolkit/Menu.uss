@@ -9,8 +9,6 @@ Button {
     font-size: 20px;
     color: rgb(255, 255, 255);
     -unity-font-definition: url("project://database/Assets/Fonts/BLKCHCRY.TTF?fileID=12800000&guid=6628d3ef214bec24191063e18bf7404c&type=3#BLKCHCRY");
-    background-image: url("project://database/Assets/Sprites/Button_V.1.0.ase?fileID=-7949358343960491254&guid=b4b11b8a16173d746be4aaceae13d2f3&type=3#Button_V.1.0");
-    -unity-slice-type: tiled;
 }
 
 Button:hover {
@@ -21,7 +19,6 @@ Button:hover {
     font-size: 20px;
     color: rgb(255, 255, 255);
     -unity-font-definition: url("project://database/Assets/Fonts/BLKCHCRY.TTF?fileID=12800000&guid=6628d3ef214bec24191063e18bf7404c&type=3#BLKCHCRY");
-    background-image: url("project://database/Assets/Sprites/Button_V.1.0.ase?fileID=-7949358343960491254&guid=b4b11b8a16173d746be4aaceae13d2f3&type=3#Button_V.1.0");
 }
 
 Slider {
@@ -30,8 +27,6 @@ Slider {
     -unity-font-definition: url("project://database/Assets/Fonts/BLKCHCRY.TTF?fileID=12800000&guid=6628d3ef214bec24191063e18bf7404c&type=3#BLKCHCRY");
     width: 100%;
     height: 60px;
-    background-image: url("project://database/Assets/Sprites/Button_V.1.0.ase?fileID=-7949358343960491254&guid=b4b11b8a16173d746be4aaceae13d2f3&type=3#Button_V.1.0");
-    -unity-slice-type: tiled;
     border-top-width: 4px;
     border-right-width: 4px;
     border-bottom-width: 4px;
