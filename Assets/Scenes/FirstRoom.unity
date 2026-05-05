@@ -1699,7 +1699,10 @@ Transform:
   - {fileID: 99849983}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &601333322
+=======
+>>>>>>> 9aa48a3 (Light addition P1)
 --- !u!1 &724970865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,11 +1711,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 601333323}
   - component: {fileID: 601333324}
   - component: {fileID: 601333325}
   m_Layer: 5
   m_Name: Heart_9
+=======
+>>>>>>> 9aa48a3 (Light addition P1)
   - component: {fileID: 724970867}
   - component: {fileID: 724970866}
   m_Layer: 0
@@ -1722,6 +1728,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!224 &601333323
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1750,12 +1757,15 @@ CanvasRenderer:
   m_GameObject: {fileID: 601333322}
   m_CullTransparentMesh: 1
 --- !u!114 &601333325
+=======
+>>>>>>> 9aa48a3 (Light addition P1)
 --- !u!114 &724970866
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 601333322}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1780,6 +1790,8 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+=======
+>>>>>>> 9aa48a3 (Light addition P1)
   m_GameObject: {fileID: 724970865}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1873,7 +1885,10 @@ Transform:
   - {fileID: 1277507328}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &862727758
+=======
+>>>>>>> 9aa48a3 (Light addition P1)
 --- !u!1 &799383812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1882,11 +1897,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 862727759}
   - component: {fileID: 862727760}
   - component: {fileID: 862727761}
   m_Layer: 5
   m_Name: Heart_2
+=======
+>>>>>>> 9aa48a3 (Light addition P1)
   - component: {fileID: 799383814}
   - component: {fileID: 799383813}
   m_Layer: 0
@@ -1896,6 +1914,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+<<<<<<< HEAD
 --- !u!224 &862727759
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1924,12 +1943,15 @@ CanvasRenderer:
   m_GameObject: {fileID: 862727758}
   m_CullTransparentMesh: 1
 --- !u!114 &862727761
+=======
+>>>>>>> 9aa48a3 (Light addition P1)
 --- !u!114 &799383813
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 862727758}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1954,6 +1976,8 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+=======
+>>>>>>> 9aa48a3 (Light addition P1)
   m_GameObject: {fileID: 799383812}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -1964,8 +1988,13 @@ MonoBehaviour:
   m_LightType: 4
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
+<<<<<<< HEAD
   m_Color: {r: 0.22661215, g: 0.1549929, b: 0.4056604, a: 1}
   m_Intensity: 1
+=======
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 0.22
+>>>>>>> 9aa48a3 (Light addition P1)
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
   m_ApplyToSortingLayers: 000000006b3a61296904e1964b89ea1d65b0273877565f47
@@ -2009,7 +2038,11 @@ Transform:
   m_GameObject: {fileID: 799383812}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 19.74, y: 10.59, z: 0}
+=======
+  m_LocalPosition: {x: 14.485659, y: -0.6457178, z: 0}
+>>>>>>> 9aa48a3 (Light addition P1)
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -40964,7 +40997,12 @@ SceneRoots:
   - {fileID: 766164699}
   - {fileID: 1051619437}
   - {fileID: 1336447346}
+<<<<<<< HEAD
   - {fileID: 1895977647}
   - {fileID: 799383814}
   - {fileID: 2027411297}
   - {fileID: 1631736695}
+=======
+  - {fileID: 799383814}
+  - {fileID: 724970867}
+>>>>>>> 9aa48a3 (Light addition P1)
