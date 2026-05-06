@@ -44,6 +44,12 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (PlayerHealth.IsDead)
+        {
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            return;
+        }
+
         float moveInput = Input.GetAxisRaw("Horizontal");
 
         rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);

@@ -44,9 +44,17 @@ public class PlayerAttack : MonoBehaviour
         }
         else
         {
-            EnemyController enemy = other.GetComponentInParent<EnemyController>();
-            if (enemy != null)
-                enemy.TakeDamage(attackDamage);
+            BloodrootAI bloodroot = other.GetComponentInParent<BloodrootAI>();
+            if (bloodroot != null)
+            {
+                bloodroot.TakeDamage(attackDamage);
+            }
+            else
+            {
+                EnemyController enemy = other.GetComponentInParent<EnemyController>();
+                if (enemy != null)
+                    enemy.TakeDamage(attackDamage);
+            }
         }
 
         Rigidbody2D enemyRb = other.GetComponentInParent<Rigidbody2D>();

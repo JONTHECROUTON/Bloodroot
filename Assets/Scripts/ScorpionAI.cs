@@ -67,6 +67,13 @@ public class ScorpionAI : MonoBehaviour
     {
         if (isDead) return;
 
+        if (PlayerHealth.IsDead)
+        {
+            rb.linearVelocity = new Vector2(0f, rb.linearVelocity.y);
+            SetAnimState(false, true, false);
+            return;
+        }
+
         attackTimer -= Time.deltaTime;
         attackLockTimer -= Time.deltaTime;
 
