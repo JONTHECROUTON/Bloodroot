@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 6faab17ea91220a44bacf3b758069b32
+=======
+guid: 2a923fa948ef6dd44bd1e0d5c2163c06
+>>>>>>> parent of 2fc3017 (Merge branch 'Lighting')
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

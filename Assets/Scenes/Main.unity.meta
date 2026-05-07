@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 9e1b39b5b7964c746800dabbb1b0456a
+=======
+guid: 555247d786ab5a4449d78eae7f64f34d
+>>>>>>> parent of 2fc3017 (Merge branch 'Lighting')
 DefaultImporter:
   externalObjects: {}
   userData: 
